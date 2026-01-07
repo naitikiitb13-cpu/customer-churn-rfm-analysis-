@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-This project implements probabilistic models to predict **Customer Lifetime Value (CLV)** for a UK-based online gift retailer. Using the **Online Retail I** dataset, we model customer purchasing behavior to estimate future transaction volume and monetary value over a 12-month horizon.
+This project implements probabilistic models to predict **Customer Lifetime Value (CLV)** for a UK-based online gift retailer. Using the **Online Retail** dataset, we model customer purchasing behavior to estimate future transaction volume and monetary value over a 12-month horizon.
 
 The core objective is to distinguish between "active" and "churned" customers in a **non-contractual** retail environment.
 
@@ -12,7 +12,7 @@ The dataset contains transactions occurring between **2009 and 2011** for a UK-r
 
 * **Target:** Unique all-occasion gifts.
 * **Customer Base:** A mix of individual retail consumers and high-volume wholesalers.
-* **Source:** [UCI Machine Learning Repository - Online Retail II](https://archive.ics.uci.edu/ml/datasets/Online+Retail+II)
+* **Source:** [UCI Machine Learning Repository - Online Retail](https://archive.ics.uci.edu/dataset/352/online+retail))
 
 ### Key Attributes:
 
@@ -34,7 +34,3 @@ We utilize a two-stage probabilistic approach:
 * **Wholesale Impact:** High-volume wholesalers significantly skew the distribution and require specialized outlier handling.
 * **Model Comparison:** The repository compares **BG-NBD**, **Pareto-NBD**, and **MBG-NBD** variants.
 * **Predictive Power:** The model successfully identifies top-tier "Whale" customers who contribute to ~80% of the predicted 12-month revenue.
-
-## 🤝 Contributing
-
-This is a Midway Report for [Your Course/Company Name]. Suggestions for improving the Gamma-Gamma independence assumption or incorporating seasonal features are welcome.
