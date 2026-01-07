@@ -1,36 +1,65 @@
-# Customer Lifetime Value Prediction: Online Retail I
+# Customer Churn Prediction using RFM Analysis
 
 ## 📌 Project Overview
+This project analyzes customer purchasing behavior and predicts customer churn using transaction data from an online retail store.  
+The analysis includes data cleaning, exploratory data analysis (EDA), RFM (Recency, Frequency, Monetary) analysis for customer segmentation, and a baseline predictive model for churn.
 
-This project implements probabilistic models to predict **Customer Lifetime Value (CLV)** for a UK-based online gift retailer. Using the **Online Retail** dataset, we model customer purchasing behavior to estimate future transaction volume and monetary value over a 12-month horizon.
+## 📂 Dataset Description
+The dataset used in this project contains transactional data of a UK-based retail business selling unique items.  
+It includes customer purchase records with attributes such as invoice number, product code, quantity, invoice date, unit price, and customer ID.
 
-The core objective is to distinguish between "active" and "churned" customers in a **non-contractual** retail environment.
+### Data Attributes
+| Attribute | Description |
+|-----------|-------------|
+| `InvoiceNo` | Unique identification code for each transaction |
+| `StockCode` | Item/product identifier |
+| `Description` | Product description |
+| `Quantity` | Quantity of items purchased |
+| `InvoiceDate` | Date and time of the transaction |
+| `UnitPrice` | Price per unit of product |
+| `CustomerID` | Unique customer identifier |
+| `Country` | Country of customer |
 
-## 📊 Dataset Description
+## 🧠 Methodology
 
-The dataset contains transactions occurring between **2009 and 2011** for a UK-registered non-store online retail business.
+### 1. Data Cleaning
+- Removed transactions without valid customer IDs
+- Filtered out cancellations (negative quantities)
+- Converted invoice dates to datetime format
 
-* **Target:** Unique all-occasion gifts.
-* **Customer Base:** A mix of individual retail consumers and high-volume wholesalers.
-* **Source:** [UCI Machine Learning Repository - Online Retail](https://archive.ics.uci.edu/dataset/352/online+retail))
+### 2. Exploratory Data Analysis (EDA)
+- Visualized purchase patterns and distributions
+- Identified important trends in customer behavior
 
-### Key Attributes:
+### 3. RFM Analysis
+- Calculated:
+  - **Recency** — days since last purchase
+  - **Frequency** — number of purchases
+  - **Monetary** — total spend per customer
+- Created RFM score and performed customer segmentation
 
-* `InvoiceDate`: Used to calculate Recency, Frequency, and T (Age).
-* `Quantity` & `UnitPrice`: Used to derive Monetary value.
-* `CustomerID`: Unique identifier for longitudinal tracking.
-* `InvoiceNo`: Used to filter out cancellations (codes starting with 'C').
+### 4. Predictive Modeling
+- Built a baseline churn prediction model using RFM features
+- Evaluated basic performance metrics (e.g., classification results)
 
-## ⚙️ Methodology
+## 🛠 Tools & Libraries
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- Seaborn  
+- Scikit-learn  
+- Jupyter Notebook
 
-We utilize a two-stage probabilistic approach:
+## 📁 Repository Structure
 
-1. **BG/NBD Model (Beta-Geometric/Negative Binomial Distribution):** To predict the expected number of transactions and the probability of a customer being "alive."
-2. **Gamma-Gamma Sub-model:** To estimate the expected average monetary value per transaction, assuming independence between frequency and monetary value.
-3. **Validation:** Models are validated using RMSE, MSE, and MAE across a holdout period.
+customer-churn-rfm-analysis-/
+├── notebooks/
+│ └── customer_churn_rfm.ipynb # Complete analysis notebook
+├── results/ # Any output files or figures
+├── README.md # This project summary
+└── requirements.txt # Python dependencies
 
-## 📈 Key Findings
+## 📈 Summary
+This project provides insights into customer purchasing patterns, segments customers by value using RFM analysis, and predicts churn based on customer behavior — helping businesses optimize retention strategies.
 
-* **Wholesale Impact:** High-volume wholesalers significantly skew the distribution and require specialized outlier handling.
-* **Model Comparison:** The repository compares **BG-NBD**, **Pareto-NBD**, and **MBG-NBD** variants.
-* **Predictive Power:** The model successfully identifies top-tier "Whale" customers who contribute to ~80% of the predicted 12-month revenue.
