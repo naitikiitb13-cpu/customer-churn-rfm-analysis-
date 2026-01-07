@@ -1,65 +1,49 @@
-# Customer Churn Prediction using RFM Analysis
+# Customer Lifetime Value Prediction & RFM Analysis
 
-## 📌 Project Overview
-This project analyzes customer purchasing behavior and predicts customer churn using transaction data from an online retail store.  
-The analysis includes data cleaning, exploratory data analysis (EDA), RFM (Recency, Frequency, Monetary) analysis for customer segmentation, and a baseline predictive model for churn.
+## Project Description
+This project focuses on analyzing customer purchasing behavior using transactional data from an online retail store. The objective is to understand customer value using RFM (Recency, Frequency, Monetary) analysis and build a baseline predictive model related to customer churn and lifetime value.
 
-## 📂 Dataset Description
-The dataset used in this project contains transactional data of a UK-based retail business selling unique items.  
-It includes customer purchase records with attributes such as invoice number, product code, quantity, invoice date, unit price, and customer ID.
+The project is developed in the context of a non-contractual, continuous purchase business model such as retail and e-commerce.
 
-### Data Attributes
-| Attribute | Description |
-|-----------|-------------|
-| `InvoiceNo` | Unique identification code for each transaction |
-| `StockCode` | Item/product identifier |
-| `Description` | Product description |
-| `Quantity` | Quantity of items purchased |
-| `InvoiceDate` | Date and time of the transaction |
-| `UnitPrice` | Price per unit of product |
-| `CustomerID` | Unique customer identifier |
-| `Country` | Country of customer |
+## Dataset
+The dataset is sourced from the UCI Machine Learning Repository and contains transaction-level data for a UK-based online retailer.
+[Datasheet link](https://archive.ics.uci.edu/dataset/352/online+retail)
 
-## 🧠 Methodology
+### Attributes
+- InvoiceNo
+- StockCode
+- Description
+- Quantity
+- InvoiceDate
+- UnitPrice
+- CustomerID
+- Country
 
-### 1. Data Cleaning
-- Removed transactions without valid customer IDs
-- Filtered out cancellations (negative quantities)
-- Converted invoice dates to datetime format
+## Methodology
+The following steps were performed as part of this project:
 
-### 2. Exploratory Data Analysis (EDA)
-- Visualized purchase patterns and distributions
-- Identified important trends in customer behavior
+1. Data Importing  
+2. Data Cleaning and Preprocessing  
+3. Exploratory Data Analysis (EDA)  
+4. RFM (Recency, Frequency, Monetary) Analysis  
+5. Customer Segmentation  
+6. Baseline Predictive Modeling  
 
-### 3. RFM Analysis
-- Calculated:
-  - **Recency** — days since last purchase
-  - **Frequency** — number of purchases
-  - **Monetary** — total spend per customer
-- Created RFM score and performed customer segmentation
-
-### 4. Predictive Modeling
-- Built a baseline churn prediction model using RFM features
-- Evaluated basic performance metrics (e.g., classification results)
-
-## 🛠 Tools & Libraries
+## Tools & Libraries
 - Python  
 - Pandas  
 - NumPy  
 - Matplotlib  
 - Seaborn  
 - Scikit-learn  
-- Jupyter Notebook
+- Jupyter Notebook  
 
-## 📁 Repository Structure
 
-customer-churn-rfm-analysis-/
-├── notebooks/
-│ └── customer_churn_rfm.ipynb # Complete analysis notebook
-├── results/ # Any output files or figures
-├── README.md # This project summary
-└── requirements.txt # Python dependencies
+## Repository Contents
+- Jupyter Notebook containing full analysis and results  
+- Dataset used for analysis  
+- Supporting output files  
 
-## 📈 Summary
-This project provides insights into customer purchasing patterns, segments customers by value using RFM analysis, and predicts churn based on customer behavior — helping businesses optimize retention strategies.
 
+## Note
+Detailed theoretical explanation of Customer Lifetime Value and business context is provided in the project report.
