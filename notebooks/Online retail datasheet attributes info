@@ -1,1 +1,12 @@
+This is a transcational datasheet that contains the information about the transcations of a UK based company of a particular time period.
 
+Attributes Information:
+Attribute Type,Description,Utility in CLV Modeling
+a). InvoiceNo: Nominal,6-digit unique identifier. Starts with 'c' for cancellations.,Used to filter out returns/cancellations to prevent negative monetary bias.
+b). StockCode,Nominal,5-digit unique product ID.,Allows for product-level basket analysis (optional for CLV).
+c). Description,Text,Product name.,"Useful for segmenting ""Wholesale"" vs ""Retail"" items."
+d). Quantity,Numeric,Items per transaction.,Crucial for identifying wholesale outliers (bulk buyers).
+e). InvoiceDate,DateTime,Day/Time of transaction.,The most critical field. Used to calculate Recency and T (Customer Age).
+f). UnitPrice,Numeric,Price per unit in GBP (£).,Combined with Quantity to calculate the Monetary Value.
+g). CustomerID,Nominal,5-digit unique ID per customer.,"The ""Key"" used to track longitudinal behavior across years."
+h). Country,Nominal,Residence of customer.,Used as a categorical feature to compare domestic vs. international loyalty.
